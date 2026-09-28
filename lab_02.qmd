@@ -64,8 +64,8 @@ for (x in vector2) {
 
 Recall that a *list* can hold a mixture of types, and that lists turn up all over `R` — in particular, they are how a function returns several results at once, and how we store a collection of records.
 
-- [ ] A function can only return a single object, so when we want to return several results we bundle them into a list. Write a function `summarise_vector(x)` that returns a **named list** with the `mean`, `min`, `max`, and `n` (length) of a numeric vector `x`. Call it on `c(210, 217, 230, 205)` and use `$` to print just the mean from the result.
-- [ ] Call `str()` on the value your function returns to confirm its structure, then modify `summarise_vector` so that missing values are ignored (test it on a vector containing `NA`).
+- [x] A function can only return a single object, so when we want to return several results we bundle them into a list. Write a function `summarise_vector(x)` that returns a **named list** with the `mean`, `min`, `max`, and `n` (length) of a numeric vector `x`. Call it on `c(210, 217, 230, 205)` and use `$` to print just the mean from the result.
+- [x] Call `str()` on the value your function returns to confirm its structure, then modify `summarise_vector` so that missing values are ignored (test it on a vector containing `NA`).
 - [ ] Below is a list of penguins, each itself a list. Using a `for` loop (or `sapply`), extract the `species` of every penguin into a character vector, and compute the mean flipper length across all of them.
 
 ```{r}
@@ -74,6 +74,8 @@ penguins <- list(
     list(name = "Tux",     species = "Gentoo",  flipper = 217),
     list(name = "Pingu",   species = "Emperor", flipper = 230)
 )
+summarise_vector(x) <- c(mean(c(penguins$flipper)), min(c(penguins$flipper)), max(c(penguins$flipper)))
+str(summarise_vector)
 ```
 
 - [ ] The function below is supposed to extract the name of every penguin. Examine its output on the two lists, `penguins` and `penguins2`. Why does it not return the expected values for `penguins2`? Fix the code so it correctly returns penguin names.
