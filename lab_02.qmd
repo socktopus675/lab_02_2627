@@ -87,6 +87,11 @@ penguins <- list(
     list(name = "Tux",     species = "Gentoo",  flipper = 217),
     list(name = "Pingu",   species = "Emperor", flipper = 230)
 )
+species_vector <- character()
+for (v in penguins$species){
+  species_vector <- c(species_vector, v)
+  mean_flipper <- mean(c(penguins$flipper))
+}
 ```
 
 - [ ] The function below is supposed to extract the name of every penguin. Examine its output on the two lists, `penguins` and `penguins2`. Why does it not return the expected values for `penguins2`? Fix the code so it correctly returns penguin names.
