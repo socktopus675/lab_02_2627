@@ -66,7 +66,7 @@ Recall that a *list* can hold a mixture of types, and that lists turn up all ove
 
 - [x] A function can only return a single object, so when we want to return several results we bundle them into a list. Write a function `summarise_vector(x)` that returns a **named list** with the `mean`, `min`, `max`, and `n` (length) of a numeric vector `x`. Call it on `c(210, 217, 230, 205)` and use `$` to print just the mean from the result.
 - [x] Call `str()` on the value your function returns to confirm its structure, then modify `summarise_vector` so that missing values are ignored (test it on a vector containing `NA`).
-- [ ] Below is a list of penguins, each itself a list. Using a `for` loop (or `sapply`), extract the `species` of every penguin into a character vector, and compute the mean flipper length across all of them.
+- [x] Below is a list of penguins, each itself a list. Using a `for` loop (or `sapply`), extract the `species` of every penguin into a character vector, and compute the mean flipper length across all of them.
 
 ```{r}
 
@@ -94,17 +94,17 @@ for (v in penguins$species){
 }
 ```
 
-- [ ] The function below is supposed to extract the name of every penguin. Examine its output on the two lists, `penguins` and `penguins2`. Why does it not return the expected values for `penguins2`? Fix the code so it correctly returns penguin names.
+- [x] The function below is supposed to extract the name of every penguin. Examine its output on the two lists, `penguins` and `penguins2`. Why does it not return the expected values for `penguins2`? Fix the code so it correctly returns penguin names.
 
 ```{r}
-get_penguin_names <- function(penguin) {
-    sapply(penguin, function(penguin) penguin[[1]])
+get_penguin_names <- function(penguins2) {
+    sapply(penguins2, function(penguins) penguins[[1]])
 }
 
 penguins2 <- list(
     list(name = "Flipper", species = "Adelie",  flipper = 210),
-    list(species = "Gentoo", flipper = 217, name = "Tux"),
-    list(flipper = 230, name = "Pingu", species = "Emperor")
+    list( name = "Tux", species = "Gentoo", flipper = 217),
+    list(name = "Pingu", flipper = 230, species = "Emperor")
 )
 
 get_penguin_names(penguins)
