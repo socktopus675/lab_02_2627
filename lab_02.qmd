@@ -134,15 +134,20 @@ Consider next this vector:
 
 ```{r}
 vector <- 1:100
+vector[vector == 10]
+vector[vector<90]
+vector[vector==10 | vector>90]
+vector[vector<90 & vector>10]
+vector[vector%%2==1]
 ```
 
 Use elementwise indexing to display all elements in the vector that are:
 
-- [ ] $\leq$ 10
-- [ ] $>$ 90
-- [ ] $\leq 10$ or $> 90$ 
-- [ ] $> 10$ and $\leq 90$
-- [ ] Odd
+- [x] $\leq$ 10
+- [x] $>$ 90
+- [x] $\leq 10$ or $> 90$ 
+- [x] $> 10$ and $\leq 90$
+- [x] Odd
 - [ ] (Advanced): Prime
 
 Hint: You will need to look up how to *combine* logical indexing statements and also some more *advanced* logical indexing statements.
